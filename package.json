@@ -1,0 +1,24 @@
+{
+  "name": "forecast.io.live",
+  "version": "0.1.0",
+  "description": "Wrapper for forecast.io API using Socket.IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Hamza",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "socket.io-client": "^1.4.8"
+  },
+  "dependencies": {
+    "joi": "^9.0.4",
+    "lodash": "^4.15.0",
+    "memory-cache": "^0.1.6",
+    "request": "^2.74.0",
+    "socket.io": "^1.4.8"
+  }
+}
