@@ -9,6 +9,10 @@
   "keywords": [],
   "author": "Hamza",
   "license": "ISC",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/hamzaOp/forecast.io.live"
+    },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
