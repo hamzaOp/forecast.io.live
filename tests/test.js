@@ -4,12 +4,12 @@ var chai = require("chai");
 var expect = chai.expect;  
 
      
-describe("test", function() {
+describe("Forecast.io.live", function() {
      var url = 'http://localhost:3000';
      var options = {transports:['websocket'],'force new connection': true };
      this.timeout(20000);
 
-  it("receive data", function(done) {
+  it("should send data", function(done) {
 
      var socket = io.connect(url,options);
 
@@ -27,7 +27,7 @@ describe("test", function() {
         setTimeout(done,15000);
   });
 
-    it("receive data from two clients", function(done) {
+    it("should serve more than one client", function(done) {
 
     var socket1 = io.connect(url,options);
     var socket2 = io.connect(url,options);
