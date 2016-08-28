@@ -1,6 +1,6 @@
 {
   "name": "forecast.io.live",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wrapper for forecast.io API using Socket.IO",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "author": "Hamza",
   "license": "ISC",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/hamzaOp/forecast.io.live"
-    },
+    "type": "git",
+    "url": "https://github.com/hamzaOp/forecast.io.live"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
