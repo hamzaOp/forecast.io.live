@@ -1,4 +1,4 @@
-script: test
+script: npm test
 language: node_js
 env:
   - PORT=3000
