@@ -1,6 +1,8 @@
 # forecast.io.live
 Wrapper for forecast.io API using Socket.IO
 
+You can find [here](https://github.com/hamzaOp/Example-app) the repository for the example app using forecast.io.live
+
 # How to install
     npm install forecast.io.live
     
