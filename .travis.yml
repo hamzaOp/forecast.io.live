@@ -1,9 +1,7 @@
-before_script:
-   npm install --only=dev
 script: test
 language: node_js
 env:
-  - PORT=7000
+  - PORT=3000
 node_js:
   - "6"
   - "4.2.1"
