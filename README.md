@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/hamzaOp/forecast.io.live.svg?branch=master)](https://travis-ci.org/hamzaOp/forecast.io.live)
+[![npm version](https://badge.fury.io/js/forecast.io.live.svg)](https://badge.fury.io/js/forecast.io.live)
+
 # forecast.io.live
 Wrapper for forecast.io API using Socket.IO
 
