@@ -19,9 +19,9 @@ describe("Forecast.io.live", function() {
              'lang': 'en'
      });
      
-     socket.on('forecast',function(data,id){
+     socket.on('forecast',function(data){
          console.log(data);
-         expect(data,id).to.include.keys('latitude','longtitude');
+         expect(data).to.include.keys('latitude','longitude');
         });
 
         setTimeout(done,15000);
@@ -47,13 +47,13 @@ describe("Forecast.io.live", function() {
 
      socket1.on('forecast',function(data,id){
          console.log(data);
-         expect(data,id).to.include.keys('latitude','longtitude');
+         expect(data,id).to.include.keys('latitude','longitude');
         });
 
 
-     socket2.on('forecast',function(data,id){
+     socket2.on('forecast',function(data){
         console.log(data);
-        expect(data,id).to.include.keys('time');
+        expect(data).to.include.keys('latitude','longitude');
         });
      setTimeout(done,15000);
   });
