@@ -44,7 +44,7 @@ module.exports = function(server,apiKey,opts) {
                         }, function (error, response, body) {
 
                                 if (!error && response.statusCode == 200) {
-                                    socket.emit('forecast',body.currently);
+                                    socket.emit('forecast',body);
                                     return;
                                 }
                                 else if (!error && response.statusCode == 400) {
