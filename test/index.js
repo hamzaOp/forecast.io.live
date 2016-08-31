@@ -21,7 +21,7 @@ describe("Forecast.io.live", function() {
      
      socket.on('forecast',function(data,id){
          console.log(data);
-         expect(data,id).to.include.keys('time');
+         expect(data,id).to.include.keys('latitude','longtitude');
         });
 
         setTimeout(done,15000);
@@ -47,7 +47,7 @@ describe("Forecast.io.live", function() {
 
      socket1.on('forecast',function(data,id){
          console.log(data);
-         expect(data,id).to.include.keys('time');
+         expect(data,id).to.include.keys('latitude','longtitude');
         });
 
 
