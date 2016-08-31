@@ -6,10 +6,10 @@ Wrapper for forecast.io API using Socket.IO
 
 You can find [here](https://github.com/hamzaOp/Example-app) the repository for the example app using forecast.io.live
 
-# How to install
+# How to use
     npm install forecast.io.live
     
-# Server side
+### Server side
 
     var io = require('forecast.io.live')(Server, API_KEY[, Options]);
 
@@ -28,45 +28,40 @@ You can find [here](https://github.com/hamzaOp/Example-app) the repository for t
 
 <i>timeout</i> : timeout for each request.
 
-# Client side
+###Client side
 
-    socket.emit('subscribe', {
-        lat: ,
-        long: ,
-        lang: ,
-        units: ,
-        .....
-      });
-    
-**Note**: Just the `lat` and `long` properties are required, you can find all available options [here](https://developer.forecast.io/docs/v2#options).
+Make sure to include `socket.io` in your code :
 
+    <script src="/socket.io.js"></script>
+  
+ then establish the connection with your websocket server :
 
-You can subscribe to multiple streams, each one will be defined by its `lat` and `long` properties, so doing something like :
+    var socket = io.connect(url,
+     { 
+       transports:['websocket'],
+       'force new connection': true
+     }
+     });
 
-    socket.emit('subscribe', {
-        lat: 37.8267,
-        long: -122.423
-      });
-      
-      socket.emit('subscribe', {
-        lat: 37.8267,
-        long: -122.423
-      });
-      
-The second `emit` will be ignored, this is useful for saving useless API calls
+That's it ! , we can now **emit** a `subscribe`  event and **listen** for a `forecast` event.  
+####socket.emit("subscribe", query)
+Once we subscribe with a query object, we receive the real-time data pushed by the server, we will call it a **stream**, each stream is identified by its **query** object, the query object have the following properties : 
 
-to receive the data, just listen to the `forecast` event :
+    {
+       'lat': LATITUDE,
+       'long': LONGTITUDE
+    }
 
-    socket.on('forecast', function(data){
-        // here we will receive all data coming from each stream, we can then filter them by lat and long...
-    });
-    
-to stop a given stream, we emit a `stop` event: 
+These two properties are required, but you can pass others as well such as 
+`lang`, `units`. All the available options are explained in the [API docs](https://developer.forecast.io/docs/v2#options).
 
-    socket.emit('stop', {
-        lat: 37.8267,
-        long: -122.423
-      });
+To receive the real-time data, we listen to the `forecast` event.
+####socket.on("forecast", function(data) { ... })
+
+The data argument contains the response from the server.
+
+**Note :** if we emit multiple `subscribe` events, we should listen to a single `forecast` event, the *data* argument will contains the real-time data for all our subscribed locations.
+
 
   
 
