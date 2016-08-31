@@ -1,6 +1,6 @@
 {
   "name": "forecast.io.live",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Wrapper for forecast.io API using Socket.IO",
   "main": "index.js",
   "scripts": {
